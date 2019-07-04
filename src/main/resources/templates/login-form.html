@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Login Form</title>
+</head>
+<body>
+<h1> Login Page </h1>
+<p th:if="${loginError}" >ユーザ名、またはパスワードが異なります。</p>
+<form th:action="@{/login-form}" method="post">
+    <label for="username">ユーザ名</label>
+    <input type="text" name="username" id="username" />
+    <br/>
+    <label for="password">パスワード</label>
+    <input type="password" id="password" name="password" />
+    <input type="submit" value="ログイン" />
+</form>
+
+</body>
+</html>

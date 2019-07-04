@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>認証成功ページ</title>
+</head>
+<body>
+<h1> SUCCESS!! </h1>
+<div>
+    <form id="logout" th:action="@{/logout}" method="POST">
+        <input type="submit" value="ログアウト" />
+    </form>
+</div>
+</body>
+</html>

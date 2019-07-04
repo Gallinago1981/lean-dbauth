@@ -1,0 +1,8 @@
+INSERT INTO user_data VALUES
+-- pw: pass01
+(1, 'test01', '$2a$10$ErYHyDl/Eui7zLnboQsvgOFlX4kSG.Wt0sYrDJAcMfjLQKJ0T6C.6', '普通のユーザ', DATEADD(MONTH, 1, CURRENT_DATE) , '0', CURRENT_TIMESTAMP , CURRENT_TIMESTAMP )
+--pw : pass02
+,(2, 'test02', '$2a$10$scQpcG5s.WbFI5BlrIkBkecWYaUikawKhoGMJKrmxx5DPPiqul4Yq', 'パスワード再設定', DATEADD(MONTH, -1, CURRENT_DATE), '0', CURRENT_TIMESTAMP , CURRENT_TIMESTAMP )
+-- pw: pass03
+,(3, 'test03', '$2a$10$scQpcG5s.WbFI5BlrIkBkecWYaUikawKhoGMJKrmxx5DPPiqul4Yq', '無効ユーザ', DATEADD(MONTH, -1, CURRENT_DATE), '1', CURRENT_TIMESTAMP , CURRENT_TIMESTAMP )
+;
