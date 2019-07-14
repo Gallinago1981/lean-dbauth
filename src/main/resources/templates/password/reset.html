@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Reet Password</title>
+    <title>Reset Password</title>
 </head>
 <body>
 <h1>パスワード再設定</h1>
-<form th:action="@{/password/rest}" method="post">
+<form th:action="@{/password/reset}" method="post" th:object="${passwordResetModel}">
+    <input type="hidden" name="username" th:value="${passwordResetModel.username}" />
+    <label for="original" >変更前のパスワード</label>
+    <input type="password" name="orginal" id="original" value="" />
+    <br/>
+    <label for="newpassword">新しいパスワード</label>
+    <input type="password" name="newpassword" id="newpassword" value="" />
+    <br/>
+    <label for="confirm"></label>
+    <input type="password" name="confirm" id="confirm" value="" />
+    <br/>
+    <input type="submit" name="reset" value="確定"/>
 </form>
 </body>
 </html>

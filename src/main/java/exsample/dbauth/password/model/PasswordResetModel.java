@@ -1,9 +1,9 @@
 package exsample.dbauth.password.model;
 
 
-public class ResetPasswordModel {
+public class PasswordResetModel {
 
-    private String username;
+    private String userId;
 
     private String oldPassword;
 
@@ -11,12 +11,12 @@ public class ResetPasswordModel {
 
     private String confPassword;
 
-    public String getUsername() {
-        return username;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getOldPassword() {

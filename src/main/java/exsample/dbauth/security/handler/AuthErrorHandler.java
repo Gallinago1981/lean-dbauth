@@ -20,7 +20,8 @@ public class AuthErrorHandler implements AuthenticationFailureHandler {
             forward(request, response,"/login-error");
         } else if (exception instanceof PasswordExpireException) {
             // パスワード有効期限切れ
-            forward(request, response,"/password/reset");
+            PasswordExpireException pee = (PasswordExpireException) exception;
+            forward(request, response,"/password/reset?username=" + ((PasswordExpireException) exception).getUsername());
         } else {
             forward(request, response,"/error/authError");
         }
