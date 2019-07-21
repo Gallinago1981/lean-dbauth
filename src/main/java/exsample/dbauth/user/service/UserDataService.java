@@ -1,7 +1,7 @@
-package exsample.dbauth.security.user.service;
+package exsample.dbauth.user.service;
 
-import exsample.dbauth.security.user.datasource.UserDataRepository;
-import exsample.dbauth.security.user.model.UserData;
+import exsample.dbauth.user.datasource.UserDataRepository;
+import exsample.dbauth.user.model.UserData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

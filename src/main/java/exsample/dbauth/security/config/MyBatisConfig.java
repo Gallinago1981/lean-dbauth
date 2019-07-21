@@ -10,7 +10,7 @@ import javax.sql.DataSource;
  * http://www.mybatis.org/mybatis-3/ja/configuration.html
  */
 //@Configuration
-//@MapperScans({@MapperScan("exsample.dbauth.security.user.datasource")})
+//@MapperScans({@MapperScan("exsample.dbauth.user.datasource")})
 public class MyBatisConfig {
 
     //@Autowired

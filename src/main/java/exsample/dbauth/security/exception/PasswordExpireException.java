@@ -4,23 +4,23 @@ import org.springframework.security.core.AuthenticationException;
 
 public class PasswordExpireException extends AuthenticationException {
 
-    private String username;
+    private String userId;
 
-    public PasswordExpireException(String username, String msg, Throwable t) {
+    public PasswordExpireException(String userId, String msg, Throwable t) {
         super(msg, t);
-        this.username = username;
+        this.userId = userId;
     }
 
-    public PasswordExpireException(String username, String msg) {
+    public PasswordExpireException(String userId, String msg) {
         super(msg);
-        this.username = username;
+        this.userId = userId;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

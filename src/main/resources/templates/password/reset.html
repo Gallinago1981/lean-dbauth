@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Reset Password</title>
+    <style type="text/css">
+    <!--
+    div.error {color: red;}
+    -->
+    </style>
 </head>
 <body>
 <h1>パスワード再設定</h1>
 <form th:action="@{/password/reset}" method="post" th:object="${passwordResetModel}">
-    <input type="hidden" name="username" th:value="${passwordResetModel.username}" />
-    <label for="original" >変更前のパスワード</label>
-    <input type="password" name="orginal" id="original" value="" />
+    <input type="hidden" name="userId" th:value="${passwordResetModel.userId}" />
+    <div class="error" th:if="${#fields.hasErrors('*{oldPassword}')}" th:errors="*{oldPassword}" ></div>
+    <label for="oldPassword" >変更前のパスワード</label>
+    <input type="password" name="oldPassword" id="oldPassword" value="" />
     <br/>
-    <label for="newpassword">新しいパスワード</label>
-    <input type="password" name="newpassword" id="newpassword" value="" />
+    <div class="error" th:if="${#fields.hasErrors('*{newPassword}')}" th:errors="*{newPassword}" ></div>
+    <label for="newPassword">新しいパスワード</label>
+    <input type="password" name="newPassword" id="newPassword" value="" />
     <br/>
-    <label for="confirm"></label>
-    <input type="password" name="confirm" id="confirm" value="" />
+    <div class="error" th:if="${#fields.hasErrors('*{confPassword}')}" th:errors="*{confPassword}" ></div>
+    <label for="confPassword">新しいパスワード（確認用）</label>
+    <input type="password" name="confPassword" id="confPassword" value="" />
     <br/>
     <input type="submit" name="reset" value="確定"/>
 </form>

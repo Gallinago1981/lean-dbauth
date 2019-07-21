@@ -1,14 +1,19 @@
 package exsample.dbauth.password.model;
 
 
+import javax.validation.constraints.NotBlank;
+
 public class PasswordResetModel {
 
     private String userId;
 
+    @NotBlank(message = "変更前のパスワードを入力してください。")
     private String oldPassword;
 
-    private String newpPssword;
+    @NotBlank(message = "新しいパスワードを入力してください。")
+    private String newPassword;
 
+    @NotBlank(message = "確認用のパスワードを入力してください。")
     private String confPassword;
 
     public String getUserId() {
@@ -27,12 +32,12 @@ public class PasswordResetModel {
         this.oldPassword = oldPassword;
     }
 
-    public String getNewpPssword() {
-        return newpPssword;
+    public String getNewPassword() {
+        return newPassword;
     }
 
-    public void setNewpPssword(String newpPssword) {
-        this.newpPssword = newpPssword;
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
     }
 
     public String getConfPassword() {

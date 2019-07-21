@@ -1,6 +1,6 @@
-package exsample.dbauth.security.user.datasource;
+package exsample.dbauth.user.datasource;
 
-import exsample.dbauth.security.user.model.UserData;
+import exsample.dbauth.user.model.UserData;
 import org.apache.ibatis.annotations.*;
 
 @Mapper
@@ -16,4 +16,7 @@ public interface UserDataMapper {
         @Result(column = "invalid_flg", property = "invalidFlg")
     })
     UserData findById(@Param("id") String id);
+
+    @Update("update user_data set password = '${password}', expire_date = DATEADD(MONTH, 1, CURRENT_DATE) where id = '${id}'")
+    int updatePasswordById(@Param("id") String id, @Param("password") String password);
 }

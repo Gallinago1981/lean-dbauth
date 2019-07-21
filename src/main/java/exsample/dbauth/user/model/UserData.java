@@ -1,4 +1,4 @@
-package exsample.dbauth.security.user.model;
+package exsample.dbauth.user.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
