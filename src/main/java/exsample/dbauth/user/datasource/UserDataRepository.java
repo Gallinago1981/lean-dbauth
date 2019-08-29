@@ -2,6 +2,7 @@ package exsample.dbauth.user.datasource;
 
 import exsample.dbauth.user.model.UserData;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class UserDataRepository {
@@ -16,6 +17,7 @@ public class UserDataRepository {
         return userDataMapper.findById(id);
     }
 
+    @Transactional
     public int updatePasswordById(String id, String newPassword) {
         int rownum =  userDataMapper.updatePasswordById(id, newPassword);
         if (rownum != 1) {
