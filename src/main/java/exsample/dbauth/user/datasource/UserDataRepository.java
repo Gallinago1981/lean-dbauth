@@ -20,7 +20,7 @@ public class UserDataRepository {
     @Transactional
     public int updatePasswordById(String id, String newPassword) {
         int rownum =  userDataMapper.updatePasswordById(id, newPassword);
-        if (rownum != 1) {
+        if (rownum > 1) {
             throw new IllegalArgumentException("更新件数が想定件数と異なりました。件数=" + rownum);
         }
         return rownum;
