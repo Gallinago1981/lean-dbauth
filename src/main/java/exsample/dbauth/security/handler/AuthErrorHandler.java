@@ -16,7 +16,7 @@ import java.io.IOException;
  *  認証エラーハンドラー
  *
  *
- *  PasswordExpireException, UserDisableExceptionは{@see exsample.dbauth.security.checker.CustomUserDetailsChecker}で発生する。
+ *  PasswordExpireException, UserDisableExceptionは{@see exsample.dbauth.security.checker.}で発生する。
  *
  */
 public class AuthErrorHandler implements AuthenticationFailureHandler {
@@ -30,8 +30,7 @@ public class AuthErrorHandler implements AuthenticationFailureHandler {
             PasswordExpireException pee = (PasswordExpireException) exception;
             forward(request, response, "/password/reset?userId=" + ((PasswordExpireException) exception).getUserId());
         } else if (exception instanceof UserDisableException) {
-            forward(request, response,"/error/userDisabled" +
-                    "");
+            forward(request, response,"/error/userDisabled");
         } else {
             forward(request, response,"/error/authError");
         }
@@ -42,12 +41,4 @@ public class AuthErrorHandler implements AuthenticationFailureHandler {
         request.getRequestDispatcher(path).forward(request, response);
     }
 
-    //    @Override
-//    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-//
-//        authException.printStackTrace(System.err);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/authError");
-//        dispatcher.forward(request, response);
-//
-//    }
 }
