@@ -14,7 +14,5 @@ public class AuthSuccessController {
         return "success.html";
     }
 
-
-
 }
 
